@@ -1,0 +1,80 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Header styles */
+header {
+    background-color: #f4f4f4;
+    padding: 1rem;
+}
+
+/* Main content styles */
+main {
+    padding: 2rem;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+/* Add your custom styles below */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Style for your image */
+.container img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Style for your heading */
+.container h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+/* Style for your paragraph */
+.container p {
+    margin-bottom: 1rem;
+}
+
+/* Style for your form */
+.container form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+}
+
+.container input[type="email"],
+.container input[type="submit"] {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+.container input[type="submit"] {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.container input[type="submit"]:hover {
+    background-color: #2980b9;
+}
