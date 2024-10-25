@@ -39,25 +39,30 @@ title: Cornerstore AI
     document.getElementById('emailForm').addEventListener('submit', function(e) {
         e.preventDefault();
         var email = this.email.value;
-        fetch('https://script.google.com/macros/s/AKfycbzFeb_V4PNecoUD9zPAyGX5g1Ria_33hpiCft1qqW7sdoDWSDw30jSPnaUNgmtQgjB6cA/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbx14ZqwjxpeF6qKkX3TaP9F1NcEf9JrnCXWsYOIR9qJNPsOyW9clXtMgMRjxicwegRDNQ/exec', {
             method: 'POST',
             body: JSON.stringify({email: email}),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok: ' + response.statusText);
+            }
+            return response.json();
+        })
         .then(data => {
             if(data.result === 'success') {
                 alert('Thank you for subscribing!');
                 this.reset();
             } else {
-                alert('There was an error. Please try again.');
+                alert('There was an error. Server response: ' + JSON.stringify(data));
             }
         })
         .catch(error => {
             console.error('Error:', error);
-            alert('There was an error. Please try again.');
+            alert('There was an error: ' + error.message);
         });
     });
     </script>
